@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function PatientPage() {
-  // Sample exercise data - in a real app, this would come from an API
   const exercises = [
     {
       id: 1,
@@ -38,45 +37,39 @@ export default function PatientPage() {
       level: "Advanced",
       thumbnail: "/placeholder.svg?height=200&width=350",
     },
-  ]
+  ];
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-white border-b sticky top-0 z-10">
+      <header className="bg-[#333b6a] text-[#b7feae] border-b sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+          {/* שמאל: לוגו עם לינק לדף הבית */}
+          <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/placeholder.svg?height=40&width=40"
-              alt="Rebuild360 Logo"
-              width={40}
-              height={40}
+              src="/logo.png"
+              alt="Rebuild360 Icon"
+              width={65}
+              height={65}
               className="rounded"
             />
-            <span className="text-xl font-bold">Rebuild360</span>
+            <div className="leading-tight">
+              <p className="text-xl font-extrabold">REBUILD</p>
+              <p className="text-lg font-bold">360</p>
+            </div>
           </Link>
 
+          {/* ימין: שם משתמש, כפתורים */}
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
+              <div className="w-10 h-10 rounded-full bg-[#b7feae] text-[#333b6a] flex items-center justify-center font-bold">
+                DS
               </div>
-              <span className="font-medium">John Doe</span>
+              <span className="font-medium text-white">Dafna Shemesh</span>
             </div>
             <Link href="/">
-              <Button variant="outline">Sign Out</Button>
+              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-[#333b6a]">
+                Sign Out
+              </Button>
             </Link>
           </div>
         </div>
@@ -105,13 +98,13 @@ export default function PatientPage() {
                 </svg>
                 Download Program
               </Button>
-              <Button className="bg-teal-600 hover:bg-teal-700">Connect Camera</Button>
+              <Button className="bg-[#5d6ac4] hover:bg-[#4e5baa] text-white">Connect Camera</Button>
             </div>
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow-sm mb-8">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center">
+              <div className="w-12 h-12 bg-[#d6dcfb] rounded-full flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -122,7 +115,7 @@ export default function PatientPage() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-teal-600"
+                  className="text-[#5d6ac4]"
                 >
                   <path d="M12 20h9"></path>
                   <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
@@ -138,7 +131,7 @@ export default function PatientPage() {
               <Card>
                 <CardContent className="pt-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-teal-600 mb-1">3/4</div>
+                    <div className="text-3xl font-bold text-[#5d6ac4] mb-1">3/4</div>
                     <p className="text-sm text-gray-500">Exercises Completed</p>
                   </div>
                 </CardContent>
@@ -147,7 +140,7 @@ export default function PatientPage() {
               <Card>
                 <CardContent className="pt-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-teal-600 mb-1">45 min</div>
+                    <div className="text-3xl font-bold text-[#5d6ac4] mb-1">45 min</div>
                     <p className="text-sm text-gray-500">Time Spent</p>
                   </div>
                 </CardContent>
@@ -156,7 +149,7 @@ export default function PatientPage() {
               <Card>
                 <CardContent className="pt-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-teal-600 mb-1">85%</div>
+                    <div className="text-3xl font-bold text-[#5d6ac4] mb-1">85%</div>
                     <p className="text-sm text-gray-500">Form Accuracy</p>
                   </div>
                 </CardContent>
@@ -191,26 +184,6 @@ export default function PatientPage() {
           </div>
         </div>
       </main>
-
-      <footer className="bg-gray-800 text-white py-6">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Image
-                src="/placeholder.svg?height=32&width=32"
-                alt="Rebuild360 Logo"
-                width={32}
-                height={32}
-                className="rounded bg-white"
-              />
-              <span className="text-lg font-bold">Rebuild360</span>
-            </div>
-
-            <div className="text-sm text-gray-300">© {new Date().getFullYear()} Rebuild360. All rights reserved.</div>
-          </div>
-        </div>
-      </footer>
     </div>
-  )
+  );
 }
-
