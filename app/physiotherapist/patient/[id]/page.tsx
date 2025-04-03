@@ -13,13 +13,13 @@ export default function PatientDetailPage({ params }: { params: { id: string } }
     id: patientId,
     name:
       patientId === 1
-        ? "John Doe"
+        ? "Dafna Shemesh"
         : patientId === 2
           ? "Sarah Smith"
           : patientId === 3
             ? "Michael Johnson"
             : patientId === 4
-              ? "Emily Wilson"
+              ? "Dafna Shemesh"
               : patientId === 5
                 ? "David Brown"
                 : "Jessica Taylor",
@@ -71,7 +71,7 @@ export default function PatientDetailPage({ params }: { params: { id: string } }
               : patientId === 5
                 ? "1 week ago"
                 : "4 days ago",
-    avatar: "/placeholder.svg?height=150&width=150",
+    avatar: "/dafna.PNG?height=150&width=150",
     email: "patient@example.com",
     phone: "(555) 123-4567",
     address: "123 Main St, Anytown, USA",
@@ -122,17 +122,21 @@ export default function PatientDetailPage({ params }: { params: { id: string } }
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-white border-b sticky top-0 z-10">
+      <header className="bg-[#333b6a] text-[#b7feae] border-b sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+          {/* שמאל: לוגו עם לינק לדף הבית */}
+          <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/placeholder.svg?height=40&width=40"
-              alt="Rebuild360 Logo"
-              width={40}
-              height={40}
+              src="/logo.png"
+              alt="Rebuild360 Icon"
+              width={65}
+              height={65}
               className="rounded"
             />
-            <span className="text-xl font-bold">Rebuild360</span>
+            <div className="leading-tight">
+              <p className="text-xl font-extrabold">REBUILD</p>
+              <p className="text-lg font-bold">360</p>
+            </div>
           </Link>
 
           <div className="flex items-center gap-4">
@@ -146,7 +150,7 @@ export default function PatientDetailPage({ params }: { params: { id: string } }
       <main className="flex-1 bg-gray-50">
         <div className="container mx-auto px-4 py-8">
           <div className="bg-white rounded-xl shadow-sm overflow-hidden mb-8">
-            <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-6 text-white">
+          <div className="bg-[#333b6a] p-6 text-[#b7feae]">
               <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
                 <Image
                   src={patient.avatar || "/placeholder.svg"}

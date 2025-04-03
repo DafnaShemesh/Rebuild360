@@ -8,45 +8,18 @@ export default function PhysiotherapistPage() {
   // Sample patient data - in a real app, this would come from an API
   const patients = [
     {
-      id: 1,
-      name: "John Doe",
-      age: 32,
-      injury: "Shoulder Injury",
-      progress: 75,
-      lastSession: "2 days ago",
-      avatar: "/placeholder.svg?height=100&width=100",
-    },
-    {
-      id: 2,
-      name: "Sarah Smith",
-      age: 28,
-      injury: "Knee Rehabilitation",
-      progress: 45,
-      lastSession: "Yesterday",
-      avatar: "/placeholder.svg?height=100&width=100",
-    },
-    {
-      id: 3,
-      name: "Michael Johnson",
-      age: 35,
-      injury: "Back Pain",
-      progress: 60,
-      lastSession: "3 days ago",
-      avatar: "/placeholder.svg?height=100&width=100",
-    },
-    {
       id: 4,
-      name: "Emily Wilson",
-      age: 30,
+      name: "Dafna Shemesh",
+      age: 24,
       injury: "Ankle Sprain",
       progress: 85,
       lastSession: "Today",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: "/dafna.PNG?height=100&width=100",
     },
     {
       id: 5,
-      name: "David Brown",
-      age: 42,
+      name: "Aviv Eli",
+      age: 26,
       injury: "Hip Replacement",
       progress: 30,
       lastSession: "1 week ago",
@@ -54,8 +27,8 @@ export default function PhysiotherapistPage() {
     },
     {
       id: 6,
-      name: "Jessica Taylor",
-      age: 26,
+      name: "Ido Rabin",
+      age: 21,
       injury: "Wrist Fracture",
       progress: 50,
       lastSession: "4 days ago",
@@ -65,18 +38,23 @@ export default function PhysiotherapistPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="bg-white border-b sticky top-0 z-10">
+      <header className="bg-[#333b6a] text-[#b7feae] border-b sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+          {/* שמאל: לוגו עם לינק לדף הבית */}
+          <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/placeholder.svg?height=40&width=40"
-              alt="Rebuild360 Logo"
-              width={40}
-              height={40}
+              src="/logo.png"
+              alt="Rebuild360 Icon"
+              width={65}
+              height={65}
               className="rounded"
             />
-            <span className="text-xl font-bold">Rebuild360</span>
+            <div className="leading-tight">
+              <p className="text-xl font-extrabold">REBUILD</p>
+              <p className="text-lg font-bold">360</p>
+            </div>
           </Link>
+
 
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
@@ -96,7 +74,7 @@ export default function PhysiotherapistPage() {
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
               </div>
-              <span className="font-medium">Dr. Sarah Johnson</span>
+              <span className="font-medium">Dr. Yael Shemesh</span>
             </div>
             <Link href="/">
               <Button variant="outline">Sign Out</Button>
