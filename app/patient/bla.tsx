@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Download } from "lucide-react"
 
 export default function PatientPage() {
   const exercises = [
@@ -37,7 +38,7 @@ export default function PatientPage() {
       level: "Advanced",
       thumbnail: "/placeholder.svg?height=200&width=350",
     },
-  ];
+  ]
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -45,13 +46,7 @@ export default function PatientPage() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           {/* שמאל: לוגו עם לינק לדף הבית */}
           <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="Rebuild360 Icon"
-              width={65}
-              height={65}
-              className="rounded"
-            />
+            <Image src="/logo.png" alt="Rebuild360 Icon" width={65} height={65} className="rounded" />
             <div className="leading-tight">
               <p className="text-xl font-extrabold">REBUILD</p>
               <p className="text-lg font-bold">360</p>
@@ -81,28 +76,12 @@ export default function PatientPage() {
             <h1 className="text-3xl font-bold">Your Exercise Program</h1>
             <div className="flex gap-2">
               <Button variant="outline" className="flex items-center gap-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
+                <Download className="h-4 w-4" />
                 Download Program
               </Button>
-              <Link href="/patient/upload-video" className="inline-block">
-              <div className="inline-flex h-10 items-center justify-center rounded-md bg-[#5d6ac4] px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-[#4e5baa]">
-            Upload Video
-          </div>
-          </Link>
+              <Link href="/patient/upload-video">
+                <Button className="bg-[#5d6ac4] hover:bg-[#4e5baa] text-white">Upload Video</Button>
+              </Link>
             </div>
           </div>
 
@@ -189,5 +168,5 @@ export default function PatientPage() {
         </div>
       </main>
     </div>
-  );
+  )
 }
